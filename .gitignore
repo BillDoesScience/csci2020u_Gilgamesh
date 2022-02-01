@@ -4,3 +4,4 @@
 *.lock
 *.properties
 settings.json
+*.MF
