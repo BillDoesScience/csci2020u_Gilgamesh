@@ -1,0 +1,14 @@
+*.class
+*.build
+*.bin
+*.lock
+*.properties
+settings.json
+*.MF
+*.XML
+*.gradle
+*.sh
+*.bat
+*.md
+*.keystore
+*.pro
