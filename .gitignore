@@ -12,3 +12,5 @@ settings.json
 *.md
 *.keystore
 *.pro
+proguard-7.1.0-beta5/
+proguard-7.2.0/
