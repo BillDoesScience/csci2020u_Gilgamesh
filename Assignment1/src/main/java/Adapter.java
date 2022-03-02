@@ -1,40 +1,39 @@
 /**
  * <h1>Adapter Class</h1>
- * Adapter that handles any calls from the Basic Audio Player to use The
- * Adv. Media Player Functions
+ * Adapter that handles any calls from the Browser to the Adv. File Handler
  * <p>
  *
  * @author  Kishore Muralitharan
  * @version 1.0
  * @since   2022-02-21
  */
-public class Adapter implements MediaPlayer {
+public class Adapter implements FileHandler {
     /**
-     * Advaned Media Player Object attached to the Class Instance
+     * Advaned File Opener attached to the Class Instance
      */
-    AdvMediaPlayer AdvPlyr;
+    AdvFileOpener AdvFile;
 
     /** Constructor for the Adapter
-     * @param audiotype Determines the type of player to be created with this instance of Adv. Media Player
+     * @param filetype Determines the type of file opener to be created with this instance of Adv. File Opener
      */
-    public Adapter(String audiotype) {
-        if (audiotype.equalsIgnoreCase("vlc")) {
-            AdvPlyr = new VLCPlayer();
-        } else if (audiotype.equalsIgnoreCase("mp4")) {
-            AdvPlyr = new MP4Player();
+    public Adapter(String filetype) {
+        if (filetype.equalsIgnoreCase("pdf")) {
+            AdvFile = new PDFFileOpener();
+        } else if (filetype.equalsIgnoreCase("docx")) {
+            AdvFile = new DocFileOpener();
         }
     }
 
-    /** Primary player class that uses the Adv. Player to play the determiend Audio Type
-     * @param AudioType - The Audio Type of the file passed
-     * @param audiofile - The Audio File that is to be played
+    /** Primary file handler that determines the type of sub-system that the Adv. File Handler must use
+     * @param filetype - The Type of the file passed
+     * @param file - The File that is to be opened
      */
     @Override
-    public void play(String AudioType, String audiofile) {
-        if (AudioType.equalsIgnoreCase("vlc")) {
-            AdvPlyr.playVLC(audiofile);
-        } else if (AudioType.equalsIgnoreCase("mp4")) {
-            AdvPlyr.playMp4(audiofile);
+    public void open(String filetype, String file) {
+        if (filetype.equalsIgnoreCase("pdf")) {
+            AdvFile.openPDF(file);
+        } else if (filetype.equalsIgnoreCase("docx")) {
+            AdvFile.openDoc(file);
         }
     }
 }
