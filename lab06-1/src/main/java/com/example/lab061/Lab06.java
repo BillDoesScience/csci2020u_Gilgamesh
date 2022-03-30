@@ -38,6 +38,7 @@ public class Lab06 extends Application {
     public void start(Stage stage) throws IOException {
         int WinHeight = (int)(avgCommercialPricesByYear[(avgCommercialPricesByYear.length - 1)]/2000 + 100);
         int WinWidth = 1200;
+        System.out.println(WinHeight);
         Group root = new Group();
         for (int i = 0; i < avgHousingPricesByYear.length; i++) {
             double Bar1H = (avgHousingPricesByYear[i]/2000);

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox fx:id="BasePanel" alignment="CENTER" spacing="0.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab08.lab8Controller">
+    <MenuBar fx:id="menuBar">
+        <menus>
+            <Menu text="File">
+                <items>
+                    <MenuItem onAction="#handleNewOption" text="New" />
+                    <MenuItem onAction="#handleOpenAction" text="Open" />
+                    <MenuItem onAction="#handleSaveAction" text="Save" />
+                    <MenuItem onAction="#handleSaveASAction" text="Save As" />
+                    <SeparatorMenuItem />
+                    <MenuItem onAction="#handleExitAction" text="Exit" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+    <TableView fx:id="tableBookList">
+        <columns>
+            <TableColumn fx:id="columnTitle" text="SID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="StudentID" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnAss" text="Assignments">
+                <cellValueFactory>
+                    <PropertyValueFactory property="Assignment" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="ColumnMid" text="Midterm">
+                <cellValueFactory>
+                    <PropertyValueFactory property="Midterm" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnFinalEx" text="FinalEx">
+                <cellValueFactory>
+                    <PropertyValueFactory property="FinalExam" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnFinalMa" text="FinalMa">
+                <cellValueFactory>
+                    <PropertyValueFactory property="FinalMark" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnLetterG" text="LetterG">
+                <cellValueFactory>
+                    <PropertyValueFactory property="LetterGrade" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+   <AnchorPane prefHeight="141.0" prefWidth="482.0" >
+       <padding>
+           <Insets top="0" right="0" bottom="10" left="0" />
+       </padding>
+      <children>
+         <Button layoutX="70.0" layoutY="84.0" mnemonicParsing="false" text="Add" onAction="#AddData" />
+         <TextField fx:id="StudentID1" layoutX="70.0" layoutY="14.0" promptText="SID" />
+         <Label layoutX="14.0" layoutY="18.0" text="SID:" />
+         <TextField fx:id="midterms1" layoutX="70.0" layoutY="48.0" promptText="Midterm/100" />
+         <Label layoutX="14.0" layoutY="52.0" text="Midterm:" />
+         <Label layoutX="227.0" layoutY="18.0" text="Assignments:" />
+         <Label layoutX="227.0" layoutY="52.0" text="Final Exam:" />
+         <TextField fx:id="assignment1" layoutX="308.0" layoutY="14.0" promptText="Assignments/100" />
+         <TextField fx:id="finalexam1" layoutX="308.0" layoutY="48.0" promptText="Final Exam/100" />
+      </children>
+   </AnchorPane>
+</VBox>
